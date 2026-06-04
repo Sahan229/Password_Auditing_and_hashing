@@ -1,40 +1,35 @@
 import re
- 
+
 def check_password_strength(password):
+
     score = 0
-    feedback = []
- 
+
     if len(password) >= 8:
         score += 1
-    else:
-        feedback.append(" Use at least 8 characters")
- 
-    if re.search(r'[A-Z]', password):
+
+    if re.search("[A-Z]", password):
         score += 1
-    else:
-        feedback.append(" Add uppercase letters (A-Z)")
- 
-    if re.search(r'[a-z]', password):
+
+    if re.search("[a-z]", password):
         score += 1
-    else:
-        feedback.append(" Add lowercase letters (a-z)")
- 
-    if re.search(r'[0-9]', password):
+
+    if re.search("[0-9]", password):
         score += 1
-    else:
-        feedback.append(" Add numbers (0-9)")
- 
-    if re.search(r'[!@#$%^&*()_\-+=/?<>.,|\\]', password):
+
+    if re.search(r"[!@#$%^&*()_+=]", password):
         score += 1
+
+    levels = [
+        "Very Weak",
+        "Weak",
+        "Medium",
+        "Strong",
+        "Very Strong"
+    ]
+
+    print("\nPassword Strength:")
+
+    if score == 0:
+        print("Very Weak")
     else:
-        feedback.append(" Add special characters (!@#$...)")
- 
-    levels = ["Very Weak", "Weak", "Moderate", "Strong", "Very Strong"]
-    print(f"\n Password : {password}")
-    print(f" Strength : {levels[score - 1] if score > 0 else 'Very Weak'} ({score}/5)")
-    if feedback:
-        print(" Suggestions:")
-        for f in feedback:
-            print(f"   {f}")
-    else:
-        print(" Great password!")
+        print(levels[score-1])

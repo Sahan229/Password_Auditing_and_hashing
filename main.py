@@ -1,7 +1,7 @@
-from Password_St_cracking import check_password_strength
-from Hashingd_Ge import generate_hash
-from Hash_cracker import crack_hash
- 
+from password_strength import check_password_strength
+from hash_generator import generate_hash
+from hash_cracker import crack_hash
+
 def show_menu():
     print("\n" + "="*45)
     print("  PASSWORD AUDITING & HASH CRACK TOOL")
