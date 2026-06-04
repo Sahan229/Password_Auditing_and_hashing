@@ -1,6 +1,6 @@
-from password_strength import check_password_strength
-from hash_generator import generate_hash
-from hash_cracker import crack_hash
+from modules.password_strength import check_password_strength
+from modules.hash_generator import generate_hash
+from modules.hash_cracker import crack_hash
 
 def show_menu():
     print("\n" + "="*45)

@@ -1,0 +1,10 @@
+__pycache__/ # ignore Python cache files
+*.py[cod]    # ignore compile time python file
+
+.vscode/     #disable the uploading Vs code settinngss
+
+.env       #Protect environment file(like secretKey)
+
+.DS_Store  #Unwanted Mac files ignore
+
+*.log      #log file ignore
